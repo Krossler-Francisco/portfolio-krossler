@@ -1,0 +1,63 @@
+---
+interface Props {
+  tech: string;
+  title: string;
+  description: string;
+  href: string;
+}
+
+const { tech, href, title, description } = Astro.props;
+---
+
+<a href={href} class="card">
+  <span>{tech}</span>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <strong>2022 - 2025</strong>
+</a>
+
+<style>
+  .card {
+    background-color: rgb(32, 32, 34);
+    padding: 2rem;
+    text-decoration: none;
+    display: block;
+    transition: 0.2s ease;
+  }
+
+  .card:hover {
+    scale: 1.1;
+  }
+
+  span{
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 12px;
+	letter-spacing: 4px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  h3 {
+	margin-top: .5rem;
+	font-weight: 600;
+	font-size: 1.5rem;
+    color: #fff;
+  }
+
+  p {
+    margin-block: .5rem 1.4rem;
+    color: #949495;
+  }
+
+  strong{
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #949495;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-style: italic;
+	letter-spacing: 4px;
+}
+
+</style>

@@ -1,16 +1,126 @@
 ---
-
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Mi Portafolio - Inicio">
+  <main>
+    <div class="container">
+      <div class="columna-fija">
+        <h1>Francisco Krossler</h1>
+        <h2>Desenvolvedor de Software en Gangain</h2>
+        <p>
+          Desarrollé soluciones tecnológicas en 
+          <a
+            class="link-1"
+            href="https://www.instagram.com/gangain_ar/"
+            target="_blank">Gangain</a>
+            y colaboro en landing pages para proyectos como <a
+            class="link-1"
+            href="https://www.instagram.com/gangain_ar/"
+            target="_blank">Projecto Religare</a> y 
+          <a
+            class="link-1"
+            href="https://www.instagram.com/gangain_ar/"
+            target="_blank">Norwell</a>.
+        </p>
+        <p>
+          Actualmente realizo mantenimiento y implemento nuevas funcionalidades en un software de gestión y logística.
+        </p>
+        <aside>
+          <li>React</li>
+          <li>Astro</li>
+          <li>Node</li>
+          <li>CSS</li>
+        </aside>
+
+      </div>
+      <div></div>
+      <div class="columna-scroll">
+        <Card
+          tech="React"
+          title="Gangain Ecommerce / SaaS"
+          description="asdasdas"
+          href="www.gangain.com.ar"
+        />
+        <Card
+          tech="React"
+          title="Gangain Ecommerce / SaaS"
+          description="asdasdas"
+          href="www.gangain.com.ar"
+        />
+        <Card
+          tech="React"
+          title="Gangain Ecommerce / SaaS"
+          description="asdasdas"
+          href="www.gangain.com.ar"
+        />
+        <Card
+          tech="React"
+          title="Gangain Ecommerce / SaaS"
+          description="asdasdas"
+          href="www.gangain.com.ar"
+        />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 600px 600px;
+    max-width: 1200px;
+    padding-block: 2rem;
+    margin: 0 auto;
+  }
+
+  .columna-fija {
+    position: fixed;
+    width: 600px;
+  }
+
+  .columna-scroll {
+    display: flex;
+    flex-direction: column;
+    min-height: 200vh;
+    gap: .5rem;
+  }
+
+  .columna-fija h1 {
+    font-size: 3.4rem;
+  }
+
+  .columna-fija h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-block: .2rem 2.2rem;
+  }
+
+  .columna-fija p {
+    max-width: 450px;
+    font-size: 15px;
+    margin-block: 1rem;
+    color: #949495;
+    line-height: 1.7rem;
+  }
+
+  .columna-fija .link-1{
+    color: white;
+    padding: 0;
+  }
+
+  aside{
+    padding-block: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  aside li{
+    list-style: disc;
+    font-style: italic;
+    font-size: 14px;
+  }
+  
+</style>

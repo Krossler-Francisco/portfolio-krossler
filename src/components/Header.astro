@@ -1,0 +1,95 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="https://github.com/tu_nombre_de_usuario" target="_blank"
+          ><Icon class="icon" name="mdi:github" />
+        </a>
+        <span>Github</span>
+      </li>
+      <li>
+        <a href="/about">
+          <Icon class="icon" name="mdi:file-document-outline" />
+        </a>
+        <span>Descargar CV</span>
+      </li>
+      <li>
+        <a href="/contact"
+          ><Icon class="icon" name="mdi:message-minus-outline" />
+        </a>
+        <span>Contáctame</span>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    background-color: #151515;
+    padding-block: 2rem;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  li {
+    transition: 0.3s ease;
+    position: relative;
+  }
+
+  li:hover {
+    scale: 1.4;
+  }
+
+  a {
+    position: relative;
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .icon {
+    scale: 2;
+  }
+
+  span {
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-wrap: nowrap;
+    top: 28px;
+    right: -28%;
+    color: #ccc;
+    font-size: 8px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #ccc;
+    width: 72px;
+    height: 20px;
+    border-radius: 12px;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  li:hover span {
+    opacity: 1;
+  }
+</style>
