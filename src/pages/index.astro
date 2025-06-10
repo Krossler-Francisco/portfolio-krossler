@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Mi Portafolio - Inicio">
   <main>
-    <div class="container">
+    <div id="home" class="container">
       <div class="columna-fija">
         <h1>Francisco Krossler</h1>
         <h2>Desenvolvedor de Software en Gangain</h2>
@@ -18,11 +18,11 @@ import Layout from "../layouts/Layout.astro";
             y colaboro en landing pages para proyectos como <a
             class="link-1"
             href="https://www.instagram.com/gangain_ar/"
-            target="_blank">Projecto Religare</a> y 
+            target="_blank">Norwell</a> y 
           <a
             class="link-1"
             href="https://www.instagram.com/gangain_ar/"
-            target="_blank">Norwell</a>.
+            target="_blank">Religare</a>.
         </p>
         <p>
           Actualmente realizo mantenimiento y implemento nuevas funcionalidades en un software de gestión y logística.
@@ -37,6 +37,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <div></div>
       <div class="columna-scroll">
+      <h2>Experiências de Trabajo</h2>
         <Card
           tech="React"
           title="Gangain Ecommerce / SaaS"
@@ -55,12 +56,7 @@ import Layout from "../layouts/Layout.astro";
           description="asdasdas"
           href="www.gangain.com.ar"
         />
-        <Card
-          tech="React"
-          title="Gangain Ecommerce / SaaS"
-          description="asdasdas"
-          href="www.gangain.com.ar"
-        />
+        <h2>Proyectos personales</h2>
       </div>
     </div>
   </main>
@@ -71,8 +67,8 @@ import Layout from "../layouts/Layout.astro";
     display: grid;
     grid-template-columns: 600px 600px;
     max-width: 1200px;
-    padding-block: 2rem;
-    margin: 0 auto;
+    padding-block: 8rem;
+    margin: 0rem auto;
   }
 
   .columna-fija {
@@ -85,6 +81,12 @@ import Layout from "../layouts/Layout.astro";
     flex-direction: column;
     min-height: 200vh;
     gap: .5rem;
+  }
+
+  .columna-scroll h2{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-block: 2.1rem 2.2rem;
   }
 
   .columna-fija h1 {
@@ -113,8 +115,7 @@ import Layout from "../layouts/Layout.astro";
   aside{
     padding-block: 2rem;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    gap: 3rem;
   }
 
   aside li{
