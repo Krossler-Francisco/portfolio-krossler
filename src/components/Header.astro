@@ -69,10 +69,15 @@ import { Icon } from "astro-icon/components";
     scale: 1.4;
   }
 
+  li:hover a{
+    color: #43a2ff;
+  }
+
   a {
     position: relative;
     color: white;
     text-decoration: none;
+    transition: .3s ease;
     font-weight: 600;
   }
 
@@ -82,23 +87,20 @@ import { Icon } from "astro-icon/components";
 
   span {
     pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     text-wrap: nowrap;
     top: 28px;
     right: -28px;
-    color: #ccc;
+    color: #43a2ff;
     font-size: 8px;
     font-weight: 600;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid #43a2ff;
     width: 72px;
-    height: 20px;
     border-radius: 12px;
     opacity: 0;
     transition: 0.3s ease;
+    padding-block: 1px 2px;
   }
 
   li:hover span {

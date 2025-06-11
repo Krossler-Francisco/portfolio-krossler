@@ -4,16 +4,17 @@ interface Props {
   title: string;
   description: string;
   href: string;
+  data: string;
 }
 
-const { tech, href, title, description } = Astro.props;
+const { tech, href, title, description, data } = Astro.props;
 ---
 
-<a href={href} class="card">
+<a href={href} target="_blank" class="card">
   <span>{tech}</span>
   <h3>{title}</h3>
   <p>{description}</p>
-  <strong>2022 - 2025</strong>
+  <strong>{data}</strong>
 </a>
 
 <style>
@@ -23,17 +24,18 @@ const { tech, href, title, description } = Astro.props;
     text-decoration: none;
     display: block;
     transition: 0.2s ease;
+    border: 1px solid #ffffff00;
   }
 
   .card:hover {
-    scale: 1.1;
+    border: 1px solid #949495;
   }
 
   span{
-	color: #fff;
+	color: #65b3ff;
 	text-transform: uppercase;
 	font-weight: 600;
-	font-size: 12px;
+	font-size: 10px;
 	letter-spacing: 4px;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
@@ -47,6 +49,7 @@ const { tech, href, title, description } = Astro.props;
 
   p {
     margin-block: .5rem 1.4rem;
+    font-size: 14px;
     color: #949495;
   }
 

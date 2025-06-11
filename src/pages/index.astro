@@ -1,62 +1,84 @@
 ---
 import Card from "../components/Card.astro";
+import Project from "../components/Project.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Mi Portafolio - Inicio">
   <main>
-    <div id="home" class="container">
+    <div class="container">
       <div class="columna-fija">
         <h1>Francisco Krossler</h1>
         <h2>Desenvolvedor de Software en Gangain</h2>
         <p>
-          Desarrollé soluciones tecnológicas en 
+          Desarrollé soluciones tecnológicas en
           <a
             class="link-1"
             href="https://www.instagram.com/gangain_ar/"
-            target="_blank">Gangain</a>
-            y colaboro en landing pages para proyectos como <a
+            target="_blank">Gangain</a
+          >
+          y colaboro en landing pages para proyectos como <a
             class="link-1"
             href="https://www.instagram.com/gangain_ar/"
-            target="_blank">Norwell</a> y 
+            target="_blank">Norwell</a
+          > y
           <a
             class="link-1"
             href="https://www.instagram.com/gangain_ar/"
-            target="_blank">Religare</a>.
+            target="_blank">Religare</a
+          >.
         </p>
         <p>
-          Actualmente realizo mantenimiento y implemento nuevas funcionalidades en un software de gestión y logística.
+          Actualmente realizo mantenimiento y implemento nuevas funcionalidades
+          en un software de gestión y logística.
         </p>
-        <aside>
-          <li>React</li>
-          <li>Astro</li>
-          <li>Node</li>
-          <li>CSS</li>
-        </aside>
-
+        <nav class="nav-link-container">
+          <ul>
+            <li class="link-container"><a href="#experiencias" class="nav-link">01<span></span> Experiencia</a></li>
+            <li class="link-container"><a href="#proyectos" class="nav-link">02<span></span>Proyectos</a></li>
+            <li class="link-container"><a href="#referencias" class="nav-link">03<span></span>Referencias</a></li>
+            <li class="link-container"><a href="#contacto" class="nav-link">04<span></span>Contacto</a></li>
+          </ul>
+        </nav>
       </div>
       <div></div>
       <div class="columna-scroll">
-      <h2>Experiências de Trabajo</h2>
-        <Card
-          tech="React"
-          title="Gangain Ecommerce / SaaS"
-          description="asdasdas"
-          href="www.gangain.com.ar"
-        />
-        <Card
-          tech="React"
-          title="Gangain Ecommerce / SaaS"
-          description="asdasdas"
-          href="www.gangain.com.ar"
-        />
-        <Card
-          tech="React"
-          title="Gangain Ecommerce / SaaS"
-          description="asdasdas"
-          href="www.gangain.com.ar"
-        />
-        <h2>Proyectos personales</h2>
+        <section id="experiencias" class="section-screen">
+          <Card
+            tech="REACT | JAVASCRIPT"
+            title="gangain/ecommerce"
+            description="Desarrollo de una plataforma de e-commerce completa con interfaz de usuario, pasarela de pagos y gestión administrativa. Tecnologías: React, Express y MongoDB."
+            href="https://www.gangain.com.ar"
+            data="2022 - 2025"
+          />
+          <Card
+          tech="ASTRO | TYPESCRIPT"
+          title="norwell/astro-landing"
+          description="Landing institucional responsiva y optimizada con buenas prácticas de SEO, tiempos de carga rápidos y estructura clara. Desarrolada con Astro"
+          href="https://www.institutonorwell.com.ar"
+          data="2022 - 2024"
+          />
+          <Card
+            tech="ASTRO | TYPESCRIPT"
+            title="religare/landing"
+            description="Sitio responsivo desarrollado con Astro. Comunica la misión del proyecto y facilita el contacto con nuevos pacientes. Optimizado para SEO y con diseño accesible."
+            href="www.projetoreligare.com"
+            data="2021 - 2024"
+          />
+        </section>
+        <section id="proyectos">
+          <div class="proyectos-container">
+            <Project/>
+            <Project/>
+            <Project/>
+            <Project/>
+            <Project/>
+            <Project/>
+          </div>
+        </section>
+        <section id="referencias">
+
+        </section>
       </div>
     </div>
   </main>
@@ -79,11 +101,9 @@ import Layout from "../layouts/Layout.astro";
   .columna-scroll {
     display: flex;
     flex-direction: column;
-    min-height: 200vh;
-    gap: .5rem;
   }
 
-  .columna-scroll h2{
+  .columna-scroll h2 {
     font-size: 1.4rem;
     font-weight: 600;
     margin-block: 2.1rem 2.2rem;
@@ -93,10 +113,22 @@ import Layout from "../layouts/Layout.astro";
     font-size: 3.4rem;
   }
 
+  .section-screen{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    scroll-margin-top: 110px;
+  }
+
+  span {
+    color: #3292f1;
+  }
+
   .columna-fija h2 {
     font-size: 1.4rem;
     font-weight: 600;
-    margin-block: .2rem 2.2rem;
+    margin-block: 0.2rem 2.2rem;
   }
 
   .columna-fija p {
@@ -107,21 +139,114 @@ import Layout from "../layouts/Layout.astro";
     line-height: 1.7rem;
   }
 
-  .columna-fija .link-1{
+  .columna-fija .link-1 {
     color: white;
     padding: 0;
   }
 
-  aside{
-    padding-block: 2rem;
-    display: flex;
-    gap: 3rem;
+  .nav-link-container{
+    margin-top: 3rem;
   }
 
-  aside li{
-    list-style: disc;
-    font-style: italic;
-    font-size: 14px;
+  .nav-link {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #949495;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+  letter-spacing: 4px;
+  transition: .3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: min-content;
+  padding: 12px 12px 12px 0px;
+}
+
+.nav-link span{
+  height: 1px;
+  margin-inline: 8px;
+  border-radius: 4px;
+  width: 22px;
+  background-color: #949495;
+  transition: .3s ease;
+}
+
+.nav-link.active span,
+.nav-link:hover span{
+  width: 42px;
+  color: #43a2ff;
+}
+
+.nav-link.active span,
+.nav-link:hover span{
+  background-color: #43a2ff;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #43a2ff;
+}
+
+.proyectos-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-block: 6rem;
+  gap: .5rem;
+}
+
+@media (max-width: 768px) {
+  .proyectos-container {
+    grid-template-columns: 1fr;
   }
-  
+}
+
 </style>
+
+<script type="module">
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".columna-fija .nav-link");
+
+  function activateNavLink() {
+    let currentSectionId = null;
+    let minDistance = Number.POSITIVE_INFINITY;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const distance = Math.abs(rect.top);
+
+      if (rect.top <= window.innerHeight / 2 && distance < minDistance) {
+        minDistance = distance;
+        currentSectionId = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${currentSectionId}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault(); // Evitá el salto inmediato
+      const targetId = link.getAttribute("href")?.substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(activateNavLink);
+  });
+
+  window.addEventListener("DOMContentLoaded", activateNavLink);
+</script>
